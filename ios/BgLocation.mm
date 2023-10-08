@@ -1,14 +1,18 @@
-#import <React/RCTBridgeModule.h>
+#import <Foundation/Foundation.h>
+#import "React/RCTBridgeModule.h"
+#import "React/RCTLog.h"
+#import <React/RCTEventEmitter.h>
 
-@interface RCT_EXTERN_MODULE(BgLocation, NSObject)
+@interface RCT_EXTERN_MODULE(BgLocation, RCTEventEmitter)
 
 RCT_EXTERN_METHOD(multiply:(float)a withB:(float)b
                  withResolver:(RCTPromiseResolveBlock)resolve
                  withRejecter:(RCTPromiseRejectBlock)reject)
 
-+ (BOOL)requiresMainQueueSetup
-{
-  return NO;
-}
+RCT_EXTERN_METHOD(startLocation)
+RCT_EXTERN_METHOD(stopLocation)
+RCT_EXTERN_METHOD(setDesiredDistance:(double)distance
+                 withResolver:(RCTPromiseResolveBlock)resolve
+                 withRejecter:(RCTPromiseRejectBlock)reject)
 
 @end
