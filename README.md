@@ -7,11 +7,35 @@ You can utilize this npm package on iOS right now, and we're in the process of b
 The react-native-bg-location package is a versatile and easy-to-use library for handling background location tracking in React Native applications. It provides a seamless way to access the device's location in the background, making it suitable for various use cases, including tracking user movements, geofencing.
 
 
-
-## Installation
+## Installation for ios 
 
 ```sh
 npm install react-native-bg-location
+
+```bash
+
+cd ios && pod install
+
+```
+
+## Configure Background Capabilities
+
+Open your App in **XCode** and select the root of your project.  Select **Capabilities** tab.  Enable **Background Modes** and enable the following modes:
+
+- [x] Location updates
+- [x] Background fetch
+
+
+## Configure Usage Strings in `Info.plist`
+
+Edit **`Info.plist`**.  Add the following items (Set **Value** as desired):
+
+| Key | Type | Value |
+|-----|-------|-------------|
+| *Privacy - Location Always and When in Use Usage Description* | `String` | *CHANGEME: Location required in background* |
+| *Privacy - Location When in Use Usage Description* | `String` | *CHANGEME: Location required when app is in use* |
+| *Privacy - Motion Usage Description* | `String` | *CHANGEME: Motion permission helps detect when device in in-motion* |
+
 ```
 
 ## Usage
