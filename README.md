@@ -11,11 +11,27 @@ npm install react-native-bg-location
 ## Usage
 
 ```js
-import { multiply } from 'react-native-bg-location';
+import { LocationEvent, setDesiredDistance, startLocation, stopLocation } from 'react-native-bg-location';
 
 // ...
+    
+  setDesiredDistance(50).then((res) => {
+    console.log(res)
+  }).catch((error) => {
+    console.log("Error code:", error);
+  })
 
-const result = await multiply(3, 7);
+ startLocation() //start location
+
+ stopLocation() //stop location
+
+  LocationEvent.addListener("LAT_LNG", (latlng) => { //register listners
+      console.log("data", latlng)
+  })
+
+  LocationEvent.removeAllListeners('LAT_LNG') //remove listeners 
+  
+
 ```
 
 ## Contributing

@@ -4,11 +4,11 @@ import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
 import com.facebook.react.bridge.Promise
-import com.facebook.react.modules.core.DeviceEventManagerModule
-import com.facebook.react.uimanager.IllegalViewOperationException
 import android.os.Bundle
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
+
+import android.location.Location
+
+
 
 class BgLocationModule(reactContext: ReactApplicationContext) :
   ReactContextBaseJavaModule(reactContext) {
@@ -16,6 +16,10 @@ class BgLocationModule(reactContext: ReactApplicationContext) :
   override fun getName(): String {
     return NAME
   }
+
+    private var desiredDistance: Float = 10.0f // Change this to your desired distance in meters
+    private var totalDistance: Float = 0.0f
+    private var lastLocation: Location? = null
 
   // Example method
   // See https://reactnative.dev/docs/native-modules-android
@@ -27,6 +31,7 @@ class BgLocationModule(reactContext: ReactApplicationContext) :
  @ReactMethod
   fun startLocation() {
     println("Hello, startLocation!") 
+    
   }
 
   @ReactMethod
@@ -35,23 +40,15 @@ class BgLocationModule(reactContext: ReactApplicationContext) :
   }
 
 
-  @ReactMethod
-  fun setDesiredDistance() {
-    println("Hello, setDesiredDistance!") 
-
-     sendEvent("LAT_LNG", Arguments.createArray().apply {
-                        pushDouble(90.98787)
-                        pushDouble(789.8787)
-      })
-  }
-
-   private fun sendEvent(eventName: String, params: WritableArray) {
-        try {
-            reactApplicationContext
-                .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter::class.java)
-                .emit(eventName, params)
-        } catch (e: IllegalViewOperationException) {
-            e.printStackTrace()
+    @ReactMethod
+    fun setDesiredDistance(distance: Float, promise: Promise) {
+        if (distance >= 0) {
+            desiredDistance = distance
+            promise.resolve("Successful distance set: $distance")
+        } else {
+            val errorCode = "INVALID_DISTANCE"
+            val errorMessage = "The desired distance must be a valid non-negative number."
+            promise.reject(errorCode, errorMessage)
         }
     }
 
