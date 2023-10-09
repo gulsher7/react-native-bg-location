@@ -30,8 +30,3 @@ const BgLocation = NativeModules.BgLocation
     export function setDesiredDistance(distance: number): Promise<any> {
       return BgLocation.setDesiredDistance(distance);
     }
-
-
-export function multiply(a: number, b: number): Promise<number> {
-  return BgLocation.multiply(a, b);
-}
