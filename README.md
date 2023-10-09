@@ -17,7 +17,9 @@ import { LocationEvent, setDesiredDistance, startLocation, stopLocation } from '
     
  1. setDesiredDistance(distance: number)
 
-This function sets the desired distance for location updates. It takes a numeric parameter distance (in meters) and returns a Promise. It fetches the location after the device moves the specified distance.
+This function sets the desired distance for location updates. 
+It takes a numeric parameter distance (in meters) and returns a Promise. 
+It fetches the location after the device moves the specified distance.
 
    
 setDesiredDistance(50).then((res) => {  //example send value in meters
