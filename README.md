@@ -25,6 +25,7 @@ Open your App in **XCode** and select the root of your project.  Select **Capabi
 - [x] Location updates
 - [x] Background fetch
 
+<img width="1219" alt="Screenshot 2023-10-09 at 10 32 14 PM" src="https://github.com/gulsher7/react-native-bg-location/assets/56266123/4c98333f-6992-466d-bab2-c66116d49822">
 
 ## Configure Usage Strings in `Info.plist`
 
