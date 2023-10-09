@@ -37,13 +37,15 @@ Edit **`Info.plist`**.  Add the following items (Set **Value** as desired):
 | *Privacy - Location When in Use Usage Description* | `String` | *CHANGEME: Location required when app is in use* |
 | *Privacy - Motion Usage Description* | `String` | *CHANGEME: Motion permission helps detect when device in in-motion* |
 
+
+## Demo video 
+
+
+https://github.com/gulsher7/react-native-bg-location/assets/56266123/1ddc7db2-d07c-49d2-8bb4-b07d1b669847
+
+
+
 ```
-
-## Demo Video
-
-https://github.com/gulsher7/react-native-bg-location/assets/56266123/8569dea4-5a1b-4580-bfc4-62fafb89f72d
-
-
 
 ## Usage
 
