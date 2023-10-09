@@ -1,6 +1,6 @@
 {
   "name": "react-native-bg-location",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "The react-native-bg-location package is a versatile and easy-to-use library for handling background location tracking in React Native applications. It provides a seamless way to access the device's location in the background, making it suitable for various use cases, including tracking user movements, geofencing.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
