@@ -39,6 +39,12 @@ Edit **`Info.plist`**.  Add the following items (Set **Value** as desired):
 
 ```
 
+## Demo Video
+
+https://github.com/gulsher7/react-native-bg-location/assets/56266123/8569dea4-5a1b-4580-bfc4-62fafb89f72d
+
+
+
 ## Usage
 
 ```js
