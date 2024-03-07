@@ -45,14 +45,11 @@ https://github.com/gulsher7/react-native-bg-location/assets/56266123/1ddc7db2-d0
 
 
 
-```
-
 ## Usage
 
 ```javascript
-import { LocationEvent, setDesiredDistance, startLocation, stopLocation } from 'react-native-bg-location';
 
-// ...
+import { LocationEvent, setDesiredDistance, startLocation, stopLocation } from 'react-native-bg-location';
     
  1. setDesiredDistance(distance: number)
 
@@ -76,15 +73,14 @@ setDesiredDistance(50).then((res) => {  //example send value in meters
 
 4. LocationEvent.addListener(eventType: string, callback: (data: any) => void)
 
-    LocationEvent.addListener("LAT_LNG", (latlng) => { //example
+    LocationEvent.addListener("LAT_LNG", (latlng) => { 
     console.log("data", latlng);
     });
 
 5. LocationEvent.removeAllListeners(eventType: string)
    To remove all listeners for a specific event type, you can use this function. 
    
-   LocationEvent.removeAllListeners("LAT_LNG"); //example
-
+   LocationEvent.removeAllListeners("LAT_LNG")
 ```
 
 ## Contributing
