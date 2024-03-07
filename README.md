@@ -49,7 +49,7 @@ https://github.com/gulsher7/react-native-bg-location/assets/56266123/1ddc7db2-d0
 
 ## Usage
 
-```js
+```javascript
 import { LocationEvent, setDesiredDistance, startLocation, stopLocation } from 'react-native-bg-location';
 
 // ...
