@@ -62,7 +62,7 @@ import { LocationEvent, setDesiredDistance, startLocation, stopLocation } from '
 
 ### setDesiredDistance
 
-Set the desired distance for location updates. It takes a numeric parameter distance (in meters) and returns a Promise.
+Set the desired distance for location updates. This function takes a numeric parameter distance (in meters) and returns a Promise. For example, if you pass 50, the new latitude and longitude will be received after the device has moved 50 meters.
 
 Example: 
 ```jsx
